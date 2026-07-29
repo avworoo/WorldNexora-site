@@ -26,11 +26,8 @@ window.WN_CONFIG = {
   responseTime: "We normally respond within 2–3 business days.",
   location: "Operating internationally",
 
-  /* ---- Contact form endpoint ----
-     Point this at a Formspree/Basin/own-backend endpoint that emails
-     submissions to the official WorldNexora address. While empty,
-     the form shows the failure message on submit (nothing is sent). */
-  formEndpoint: "",
+  /* ---- Contact form endpoint ---- */
+  formEndpoint: "https://formspree.io/f/xqerjblj",
 
   /* ---- Social media ----
      Only accounts with a URL are displayed anywhere on the site.
