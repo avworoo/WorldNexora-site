@@ -17,17 +17,32 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "WorldNexora",
-    "url": "https://wnexora.com",
-    "logo": "https://wnexora.com/assets/logo-600.png",
-    "description": "WorldNexora is a software company designing and building digital products that solve real-world problems.",
-    "email": "contact@wnexora.com",
-    "sameAs": [
-      "https://www.instagram.com/worldnexora.official/",
-      "https://www.facebook.com/share/1BrysAzEgp/",
-      "https://x.com/worldnexora",
-      "https://www.linkedin.com/company/worldnexora/"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://wnexora.com/#website",
+        "url": "https://wnexora.com/",
+        "name": "WorldNexora",
+        "alternateName": "World Nexora",
+        "publisher": {
+          "@id": "https://wnexora.com/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://wnexora.com/#organization",
+        "name": "WorldNexora",
+        "url": "https://wnexora.com/",
+        "logo": "https://wnexora.com/assets/logo-600.png",
+        "description": "WorldNexora is a software company designing and building digital products that solve real-world problems.",
+        "email": "contact@wnexora.com",
+        "sameAs": [
+          "https://www.instagram.com/worldnexora.official/",
+          "https://www.facebook.com/share/1BrysAzEgp/",
+          "https://x.com/worldnexora",
+          "https://www.linkedin.com/company/worldnexora/"
+        ]
+      }
     ]
   }
   </script>
