@@ -22,7 +22,7 @@ window.WN_CONFIG = {
   },
 
   /* ---- Company contact ---- */
-  contactEmail: "contact@worldnexora.com",
+  contactEmail: "contact@wnexora.com",
   responseTime: "We normally respond within 2–3 business days.",
   location: "Operating internationally",
 
