@@ -36,10 +36,10 @@ window.WN_CONFIG = {
      Only accounts with a URL are displayed anywhere on the site.
      Leave a value empty ("") to hide that platform's icon.          */
   social: {
-    instagram: "",
-    linkedin: "",
-    x: "",
-    facebook: "",
+    instagram: "https://www.instagram.com/worldnexora.official?igsh=cTA1dzFnZmhpOW9k&utm_source=qr",
+    linkedin: "https://www.linkedin.com/company/worldnexora/",
+    x: "https://x.com/worldnexora?s=21",
+    facebook: "https://www.facebook.com/share/1BrysAzEgp/?mibextid=wwXIfr",
     youtube: "",
     tiktok: ""
   }

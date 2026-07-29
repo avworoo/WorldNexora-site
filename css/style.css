@@ -187,13 +187,13 @@ main { padding-top: 72px; }
 .hero .lede { margin-top: 28px; }
 
 .hero-art { display: flex; justify-content: center; }
-.hero-art svg { width: 100%; max-width: 380px; height: auto; }
+.hero-art img { width: 100%; max-width: 420px; height: auto; border-radius: 20%; }
 
 @media (max-width: 860px) {
   .hero { padding: 90px 0 80px; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-art { order: -1; }
-  .hero-art svg { max-width: 220px; }
+  .hero-art img { max-width: 240px; }
 }
 
 /* ---------------- Cards ---------------- */
@@ -254,30 +254,6 @@ main { padding-top: 72px; }
 
 .note { font-size: 0.9rem; color: var(--muted); margin-top: 14px; }
 .panel-navy .note { color: rgba(255,255,255,0.65); }
-
-/* ---------------- Timeline (Our Approach) ---------------- */
-
-.timeline { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 48px; counter-reset: step; }
-.timeline li { list-style: none; position: relative; padding-top: 26px; }
-.timeline li::before {
-  counter-increment: step; content: counter(step, decimal-leading-zero);
-  position: absolute; top: 0; left: 0;
-  font-size: 0.8rem; font-weight: 700; color: var(--muted); letter-spacing: 0.08em;
-}
-.timeline li::after {
-  content: ""; position: absolute; top: 8px; left: 34px; right: 8px; height: 1px;
-  background: var(--line);
-}
-.timeline li:last-child::after { display: none; }
-.timeline h3 { font-size: 1rem; margin-bottom: 6px; }
-.timeline p { font-size: 0.9rem; }
-
-@media (max-width: 960px) {
-  .timeline { grid-template-columns: 1fr; gap: 28px; }
-  .timeline li { padding-top: 0; padding-left: 52px; }
-  .timeline li::before { top: 2px; }
-  .timeline li::after { top: 26px; left: 12px; right: auto; bottom: -22px; width: 1px; height: auto; }
-}
 
 /* ---------------- Values list ---------------- */
 
