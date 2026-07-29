@@ -345,14 +345,22 @@ main { padding-top: 72px; }
 .site-footer a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 0.97rem; }
 .site-footer a:hover { color: #fff; text-decoration: underline; }
 
-.site-footer .social-links { margin-top: 20px; }
+.site-footer .social-links {
+  margin-top: 20px;
+  flex-direction: row;
+  align-items: flex-start;
+  min-height: 60px;
+}
+.site-footer .social-links li:nth-child(2) { transform: translateY(6px); }
+.site-footer .social-links li:nth-child(3) { transform: translateY(12px); }
+.site-footer .social-links li:nth-child(4) { transform: translateY(18px); }
 .site-footer .social-links a { color: #fff; background: rgba(255,255,255,0.1); }
 .site-footer .social-links a:hover { background: rgba(255,255,255,0.2); }
 .site-footer .social-links .social-empty { color: rgba(255,255,255,0.5); }
 
 .footer-bottom {
   margin-top: 56px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.15);
-  display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between;
+  display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; text-align: center;
   font-size: 0.9rem; color: rgba(255,255,255,0.6);
 }
 
