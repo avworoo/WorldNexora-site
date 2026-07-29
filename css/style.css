@@ -348,12 +348,8 @@ main { padding-top: 72px; }
 .site-footer .social-links {
   margin-top: 20px;
   flex-direction: row;
-  align-items: flex-start;
-  min-height: 60px;
+  align-items: center;
 }
-.site-footer .social-links li:nth-child(2) { transform: translateY(6px); }
-.site-footer .social-links li:nth-child(3) { transform: translateY(12px); }
-.site-footer .social-links li:nth-child(4) { transform: translateY(18px); }
 .site-footer .social-links a { color: #fff; background: rgba(255,255,255,0.1); }
 .site-footer .social-links a:hover { background: rgba(255,255,255,0.2); }
 .site-footer .social-links .social-empty { color: rgba(255,255,255,0.5); }
