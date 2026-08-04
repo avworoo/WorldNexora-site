@@ -176,6 +176,11 @@
   </footer>
 
   <script src="js/site-config.js"></script>
+  <script>
+    if (window.location.pathname === '/products.html') {
+      window.history.replaceState(null, '', '/products' + window.location.search + window.location.hash);
+    }
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
