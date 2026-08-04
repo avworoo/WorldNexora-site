@@ -219,6 +219,42 @@ main { padding-top: 72px; }
 
 .card p { font-size: 0.98rem; }
 
+/* ---------------- Team ---------------- */
+
+.team-grid {
+  display: grid; gap: 24px; margin-top: 48px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.team-card {
+  overflow: hidden; background: var(--white); border: 1px solid var(--line-soft);
+  border-radius: 16px; transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.team-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(10, 39, 87, 0.07); }
+
+.team-photo-placeholder {
+  min-height: 220px; padding: 32px; background: var(--accent-soft); color: var(--navy);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+}
+.team-photo-placeholder span {
+  width: 82px; height: 82px; border-radius: 50%; background: var(--white);
+  display: grid; place-items: center; font-size: 1.35rem; font-weight: 700; letter-spacing: 0.04em;
+  box-shadow: 0 8px 24px rgba(10, 39, 87, 0.08);
+}
+.team-photo-placeholder small { color: var(--muted); font-size: 0.82rem; font-weight: 600; }
+.team-card-body { padding: 28px; }
+.team-card h3 { font-size: 1.3rem; }
+.team-role { margin-top: 6px; color: var(--navy); font-weight: 700; }
+.team-bio { margin-top: 20px; }
+.team-links-placeholder {
+  margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line-soft);
+  color: var(--muted); font-size: 0.88rem;
+}
+
+@media (max-width: 720px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
+
 /* ---------------- Featured product / panels ---------------- */
 
 .panel {
