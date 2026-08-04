@@ -3,6 +3,13 @@
 (function () {
   "use strict";
 
+  /* ---------- Clean page addresses ---------- */
+  var currentPath = window.location.pathname;
+  var cleanPath = currentPath.replace(/\/index\.html$/, "/").replace(/\.html$/, "");
+  if (cleanPath !== currentPath) {
+    window.history.replaceState(null, "", cleanPath + window.location.search + window.location.hash);
+  }
+
   var cfg = window.WN_CONFIG || {};
 
   /* ---------- Mobile navigation ---------- */
