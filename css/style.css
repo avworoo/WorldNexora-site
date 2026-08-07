@@ -292,6 +292,44 @@ main { padding-top: 72px; }
 }
 @media (max-width: 860px) { .product-split { grid-template-columns: 1fr; } }
 
+.nearloom-progress-screen {
+  --barn-red: #7c0a02;
+  --linen: #faf0e6;
+  width: 100%; max-width: 420px; min-height: 300px; margin: 0 auto;
+  padding: 34px 30px 28px; border-radius: 24px;
+  background: var(--barn-red); color: var(--linen);
+  border: 2px solid rgba(250, 240, 230, 0.7);
+  box-shadow: 0 24px 52px rgba(21, 8, 7, 0.28);
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.nearloom-progress-stage { position: relative; padding-top: 150px; }
+.nearloom-walker {
+  position: absolute; left: 30%; bottom: 12px; transform: translateX(-50%);
+  width: 118px; height: 138px; object-fit: contain; border-radius: 12px;
+  mix-blend-mode: screen;
+}
+.nearloom-progress-track {
+  height: 12px; overflow: hidden; border-radius: 999px;
+  background: rgba(250, 240, 230, 0.28);
+  border: 1px solid rgba(250, 240, 230, 0.68);
+}
+.nearloom-progress-fill {
+  display: block; width: 30%; height: 100%; border-radius: inherit;
+  background: var(--linen); box-shadow: 0 0 18px rgba(250, 240, 230, 0.42);
+}
+.nearloom-progress-copy {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; margin-top: 18px; color: var(--linen);
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.nearloom-progress-copy strong { font-size: 1.05rem; color: inherit; }
+
+@media (max-width: 520px) {
+  .nearloom-progress-screen { min-height: 260px; padding: 28px 22px 24px; }
+  .nearloom-progress-stage { padding-top: 130px; }
+  .nearloom-walker { width: 102px; height: 120px; }
+}
+
 .note { font-size: 0.9rem; color: var(--muted); margin-top: 14px; }
 .panel-navy .note { color: rgba(255,255,255,0.65); }
 
