@@ -298,10 +298,7 @@ main { padding-top: 72px; }
   position: relative; isolation: isolate; overflow: hidden;
   width: 100%; max-width: 440px; min-height: 260px; margin: 0 auto;
   padding: 24px 28px 26px; border-radius: 22px;
-  background:
-    linear-gradient(rgba(124, 10, 2, 0.045) 1px, transparent 1px) 0 0 / 100% 28px,
-    linear-gradient(90deg, rgba(124, 10, 2, 0.035) 1px, transparent 1px) 0 0 / 28px 100%,
-    var(--linen);
+  background: var(--linen);
   color: var(--barn-red);
   border: 4px solid var(--barn-red);
   box-shadow:
@@ -310,18 +307,13 @@ main { padding-top: 72px; }
     0 24px 52px rgba(21, 8, 7, 0.28);
   display: flex; flex-direction: column;
 }
-.nearloom-progress-screen::after {
-  content: ""; position: absolute; z-index: -1; inset: 0;
-  background: radial-gradient(circle at 50% 20%, rgba(124, 10, 2, 0.07), transparent 58%);
-  pointer-events: none;
-}
 .nearloom-screen-header {
   display: flex; align-items: center; gap: 16px;
   padding-bottom: 15px; border-bottom: 1px solid rgba(124, 10, 2, 0.28);
   color: var(--barn-red); font-size: 0.72rem; font-weight: 800;
   letter-spacing: 0.12em; text-transform: uppercase;
 }
-.nearloom-progress-stage { position: relative; margin-top: auto; padding-top: 96px; }
+.nearloom-progress-stage { position: relative; margin-top: auto; margin-bottom: 29px; padding-top: 96px; }
 .nearloom-walker {
   position: absolute; left: 30%; bottom: 15px; transform: translateX(-50%);
   width: 52px; height: 44px; object-fit: contain;
@@ -336,24 +328,21 @@ main { padding-top: 72px; }
   box-shadow: inset 0 1px 4px rgba(124, 10, 2, 0.16);
 }
 .nearloom-progress-fill {
-  position: relative; display: block; width: 0; height: 100%; overflow: hidden;
+  position: relative; display: flex; align-items: center; justify-content: flex-end;
+  width: 0; height: 100%; overflow: hidden; padding-right: 7px; box-sizing: border-box;
   border-radius: inherit; background: var(--barn-red);
+  color: var(--linen); font-size: 0.58rem; font-weight: 800; line-height: 1;
+  letter-spacing: 0.04em;
   box-shadow: 0 0 18px rgba(124, 10, 2, 0.4);
   animation: nearloom-progress-grow 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
 }
+.nearloom-progress-fill strong { color: inherit; font: inherit; }
 .nearloom-progress-fill::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(90deg, transparent, rgba(250, 240, 230, 0.52), transparent);
   transform: translateX(-110%);
   animation: nearloom-progress-shimmer 2.4s ease-in-out 2.15s infinite;
 }
-.nearloom-progress-copy {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; margin-top: 16px; color: var(--barn-red);
-  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
-}
-.nearloom-progress-copy strong { font-size: 0.82rem; color: inherit; }
-
 @keyframes nearloom-progress-grow { to { width: 30%; } }
 @keyframes nearloom-progress-shimmer {
   0%, 18% { transform: translateX(-110%); }
