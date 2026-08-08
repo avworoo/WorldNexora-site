@@ -273,8 +273,8 @@ main { padding-top: 72px; }
 .panel-navy .btn-primary:hover { background: var(--bg); border-color: var(--bg); }
 .panel-navy .btn-secondary { color: #fff; border-color: rgba(255,255,255,0.6); }
 .panel-navy .btn-secondary:hover { background: rgba(255,255,255,0.1); }
-.panel-navy .btn[data-wn-visit][aria-disabled="true"]:hover,
-.panel-navy .btn[data-wn-visit][aria-disabled="true"]:focus-visible {
+.panel-navy .btn[data-wn-visit]:hover,
+.panel-navy .btn[data-wn-visit]:focus-visible {
   background: #7c0a02;
   color: #faf0e6;
   border-color: #faf0e6;

@@ -18,7 +18,7 @@ window.WN_CONFIG = {
     expectedLaunch: "To be announced",
     // Set to the live Nearloom URL when it exists. Leave empty ("")
     // to show the disabled "Website Coming Soon" state instead.
-    websiteUrl: ""
+    websiteUrl: "https://nearloom.app"
   },
 
   /* ---- Company contact ---- */
