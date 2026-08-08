@@ -308,15 +308,15 @@ main { padding-top: 72px; }
   display: flex; flex-direction: column;
 }
 .nearloom-screen-wordmark {
-  position: absolute; z-index: 0; top: 38px; left: 50%;
+  position: absolute; z-index: 0; right: auto; bottom: 88px; left: 50%;
   width: max-content; white-space: nowrap;
-  color: var(--barn-red); opacity: 0.14;
+  color: var(--barn-red); opacity: 0.22;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Narrow", sans-serif;
-  font-size: clamp(3.8rem, 8vw, 5.2rem); font-weight: 900;
+  font-size: clamp(4.4rem, 9.5vw, 6.4rem); font-weight: 900;
   font-stretch: ultra-condensed; line-height: 0.8; letter-spacing: 0.01em;
   text-transform: uppercase;
-  transform: translateX(-50%) scaleX(0.88) scaleY(1.24);
-  transform-origin: top center;
+  transform: translateX(-50%) scaleX(0.84) scaleY(1.2);
+  transform-origin: bottom center;
   pointer-events: none; user-select: none;
 }
 .nearloom-progress-stage { position: relative; margin-top: auto; margin-bottom: 29px; padding-top: 96px; }
@@ -357,7 +357,7 @@ main { padding-top: 72px; }
 
 @media (max-width: 520px) {
   .nearloom-progress-screen { min-height: 230px; padding: 21px 20px 23px; }
-  .nearloom-screen-wordmark { top: 31px; font-size: 3.8rem; transform: translateX(-50%) scaleX(0.82) scaleY(1.2); }
+  .nearloom-screen-wordmark { bottom: 82px; font-size: 4.5rem; transform: translateX(-50%) scaleX(0.76) scaleY(1.16); }
   .nearloom-progress-stage { padding-top: 84px; }
   .nearloom-walker { width: 46px; height: 39px; bottom: 14px; }
 }
