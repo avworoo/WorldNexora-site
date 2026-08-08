@@ -273,8 +273,8 @@ main { padding-top: 72px; }
 .panel-navy .btn-primary:hover { background: var(--bg); border-color: var(--bg); }
 .panel-navy .btn-secondary { color: #fff; border-color: rgba(255,255,255,0.6); }
 .panel-navy .btn-secondary:hover { background: rgba(255,255,255,0.1); }
-.panel-navy .btn[data-wn-visit]:hover,
-.panel-navy .btn[data-wn-visit]:focus-visible {
+.panel-navy .btn[data-wn-visit][aria-disabled="true"]:hover,
+.panel-navy .btn[data-wn-visit][aria-disabled="true"]:focus-visible {
   background: #7c0a02;
   color: #faf0e6;
   border-color: #faf0e6;
@@ -285,6 +285,40 @@ main { padding-top: 72px; }
 }
 
 .status-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 8px; }
+
+.nearloom-countdown {
+  display: inline-flex; flex-direction: column; gap: 10px;
+  width: min(100%, 330px); margin-top: 16px; padding: 14px 16px;
+  border: 1px solid rgba(250, 240, 230, 0.24); border-radius: 14px;
+  background: rgba(250, 240, 230, 0.07); box-sizing: border-box;
+}
+.nearloom-countdown-label {
+  color: rgba(250, 240, 230, 0.72); font-size: 0.72rem; font-weight: 750;
+  letter-spacing: 0.12em; line-height: 1; text-transform: uppercase;
+}
+.nearloom-countdown-grid {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;
+}
+.nearloom-countdown-unit {
+  display: grid; justify-items: center; gap: 3px; min-width: 0; padding: 9px 5px 7px;
+  border: 1px solid rgba(250, 240, 230, 0.28); border-radius: 10px;
+  background: #7c0a02; color: #faf0e6;
+  box-shadow: 0 5px 14px rgba(124, 10, 2, 0.25);
+}
+.nearloom-countdown-unit strong {
+  color: inherit; font-size: 1.18rem; line-height: 1; font-variant-numeric: tabular-nums;
+}
+.nearloom-countdown-unit small {
+  color: rgba(250, 240, 230, 0.72); font-size: 0.58rem; font-weight: 700;
+  letter-spacing: 0.07em; text-transform: uppercase;
+}
+.nearloom-countdown.is-complete .nearloom-countdown-unit { background: rgba(124, 10, 2, 0.58); }
+
+@media (max-width: 420px) {
+  .nearloom-countdown { padding: 12px; }
+  .nearloom-countdown-grid { gap: 6px; }
+  .nearloom-countdown-unit { padding-inline: 3px; }
+}
 
 .badge {
   display: inline-flex; align-items: center; gap: 8px;

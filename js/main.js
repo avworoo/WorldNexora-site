@@ -63,6 +63,48 @@
     }
   });
 
+  /* ---------- Nearloom launch countdown ---------- */
+  var countdowns = document.querySelectorAll("[data-wn-countdown]");
+  if (countdowns.length) {
+    var launchDate = (cfg.nearloom && cfg.nearloom.launchDate) ||
+      countdowns[0].getAttribute("data-target");
+    var launchTime = Date.parse(launchDate || "");
+
+    if (!Number.isFinite(launchTime)) {
+      countdowns.forEach(function (countdown) {
+        countdown.hidden = true;
+      });
+    } else {
+      var padTime = function (value) {
+        return String(value).padStart(2, "0");
+      };
+
+      var updateCountdown = function () {
+        var remainingSeconds = Math.max(0, Math.floor((launchTime - Date.now()) / 1000));
+        var days = Math.floor(remainingSeconds / 86400);
+        var hours = Math.floor((remainingSeconds % 86400) / 3600);
+        var minutes = Math.floor((remainingSeconds % 3600) / 60);
+        var seconds = remainingSeconds % 60;
+
+        countdowns.forEach(function (countdown) {
+          countdown.querySelector("[data-countdown-days]").textContent = String(days);
+          countdown.querySelector("[data-countdown-hours]").textContent = padTime(hours);
+          countdown.querySelector("[data-countdown-minutes]").textContent = padTime(minutes);
+          countdown.querySelector("[data-countdown-seconds]").textContent = padTime(seconds);
+
+          if (remainingSeconds === 0) {
+            countdown.classList.add("is-complete");
+            countdown.querySelector("[data-countdown-label]").textContent = "Expected launch date reached";
+          }
+        });
+
+        return remainingSeconds > 0;
+      };
+
+      if (updateCountdown()) window.setInterval(updateCountdown, 1000);
+    }
+  }
+
   /* ---------- Social media links ---------- */
   var PLATFORMS = {
     instagram: { label: "Instagram", icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>' },

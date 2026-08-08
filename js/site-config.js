@@ -15,10 +15,12 @@ window.WN_CONFIG = {
     status: "In Development",
     // Shown as "Expected Launch: <value>". Use e.g. "March 2027"
     // or "To be announced".
-    expectedLaunch: "To be announced",
+    expectedLaunch: "4th January 2027",
+    // ISO timestamp used by the live countdown on the Home and Products pages.
+    launchDate: "2027-01-04T00:00:00Z",
     // Set to the live Nearloom URL when it exists. Leave empty ("")
     // to show the disabled "Website Coming Soon" state instead.
-    websiteUrl: "https://nearloom.app"
+    websiteUrl: ""
   },
 
   /* ---- Company contact ---- */
