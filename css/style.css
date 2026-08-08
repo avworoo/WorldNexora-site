@@ -158,7 +158,8 @@ main { padding-top: 72px; }
   font-family: var(--font); font-size: 1rem; font-weight: 600;
   padding: 14px 28px; border-radius: var(--radius);
   border: 2px solid var(--navy);
-  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease, transform 0.15s ease;
 }
 .btn:active { transform: scale(0.98); }
 
@@ -272,6 +273,16 @@ main { padding-top: 72px; }
 .panel-navy .btn-primary:hover { background: var(--bg); border-color: var(--bg); }
 .panel-navy .btn-secondary { color: #fff; border-color: rgba(255,255,255,0.6); }
 .panel-navy .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+.panel-navy .btn[data-wn-visit][aria-disabled="true"]:hover,
+.panel-navy .btn[data-wn-visit][aria-disabled="true"]:focus-visible {
+  background: #7c0a02;
+  color: #faf0e6;
+  border-color: #faf0e6;
+  box-shadow:
+    0 0 0 3px rgba(250, 240, 230, 0.2),
+    0 10px 26px rgba(124, 10, 2, 0.48);
+  outline: none;
+}
 
 .status-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 8px; }
 
