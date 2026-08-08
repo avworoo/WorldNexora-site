@@ -79,26 +79,62 @@
         return String(value).padStart(2, "0");
       };
 
+      var addUtcMonths = function (date, monthCount) {
+        var year = date.getUTCFullYear();
+        var month = date.getUTCMonth() + monthCount;
+        var day = date.getUTCDate();
+        var lastDay = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+
+        return new Date(Date.UTC(
+          year,
+          month,
+          Math.min(day, lastDay),
+          date.getUTCHours(),
+          date.getUTCMinutes(),
+          date.getUTCSeconds(),
+          date.getUTCMilliseconds()
+        ));
+      };
+
+      var getCountdownParts = function (nowTime) {
+        var now = new Date(nowTime);
+        var target = new Date(launchTime);
+        var months = (target.getUTCFullYear() - now.getUTCFullYear()) * 12 +
+          target.getUTCMonth() - now.getUTCMonth();
+        var monthAnchor = addUtcMonths(now, Math.max(0, months));
+
+        while (monthAnchor.getTime() > launchTime && months > 0) {
+          months -= 1;
+          monthAnchor = addUtcMonths(now, months);
+        }
+
+        var remainingSeconds = Math.max(0, Math.floor((launchTime - monthAnchor.getTime()) / 1000));
+
+        return {
+          months: Math.max(0, months),
+          days: Math.floor(remainingSeconds / 86400),
+          hours: Math.floor((remainingSeconds % 86400) / 3600),
+          minutes: Math.floor((remainingSeconds % 3600) / 60),
+          isComplete: launchTime <= nowTime
+        };
+      };
+
       var updateCountdown = function () {
-        var remainingSeconds = Math.max(0, Math.floor((launchTime - Date.now()) / 1000));
-        var days = Math.floor(remainingSeconds / 86400);
-        var hours = Math.floor((remainingSeconds % 86400) / 3600);
-        var minutes = Math.floor((remainingSeconds % 3600) / 60);
-        var seconds = remainingSeconds % 60;
+        var parts = getCountdownParts(Date.now());
 
         countdowns.forEach(function (countdown) {
-          countdown.querySelector("[data-countdown-days]").textContent = String(days);
-          countdown.querySelector("[data-countdown-hours]").textContent = padTime(hours);
-          countdown.querySelector("[data-countdown-minutes]").textContent = padTime(minutes);
-          countdown.querySelector("[data-countdown-seconds]").textContent = padTime(seconds);
+          countdown.querySelector("[data-countdown-months]").textContent = String(parts.months);
+          countdown.querySelector("[data-countdown-days]").textContent = String(parts.days);
+          countdown.querySelector("[data-countdown-hours]").textContent = padTime(parts.hours);
+          countdown.querySelector("[data-countdown-minutes]").textContent = padTime(parts.minutes);
 
-          if (remainingSeconds === 0) {
+          if (parts.isComplete) {
             countdown.classList.add("is-complete");
             countdown.querySelector("[data-countdown-label]").textContent = "Expected launch date reached";
           }
         });
 
-        return remainingSeconds > 0;
+        return !parts.isComplete;
       };
 
       if (updateCountdown()) window.setInterval(updateCountdown, 1000);
